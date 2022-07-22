@@ -1,11 +1,21 @@
 import React from 'react';
-type BodyPropsType = {
-    titleForBody: string
+export type BodyPropsType = {
+    titleForBody: string,
+    topCars:Array<topCarsPropsType>
+}
+export type topCarsPropsType ={
+        manufacturer:string,
+        model:string
 }
 export const Body:React.FC<BodyPropsType> = (props) => {
     return (
         <div>
-            {props.titleForBody}
+           <div>{props.titleForBody}</div>
+            <div>{props.topCars.map(el=>{
+                return(
+                    <ul>{el.model} - {el.manufacturer}</ul>
+                )
+            })}</div>
         </div>
     );
 };

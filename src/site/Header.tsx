@@ -1,5 +1,5 @@
 import React from 'react';
-type HeaderPropsType={
+export type HeaderPropsType={
     title:string
 }
 export const Header: React.FC<HeaderPropsType> = (props) => {
